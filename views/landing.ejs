@@ -1,0 +1,26 @@
+
+<%- include('./partials/head') %>
+    <body>
+        <%- include('./partials/searchbar') %>
+
+            
+
+                <div id="root">
+                    <div class="card-holder">
+                        <h1> Joke #<%=joke.id %> </h1>
+                        <a href="/jokebook/category/<%=joke.category%>">
+                            <%= joke.category %>
+                        </a>
+                        <p><%=joke.setup %>
+                        </p>
+                        <p><%=joke.delivery %>
+                        </p>
+                        <a href = "/jokebook/categories">View all joke categories </a>
+                        <br>
+                        <br>
+                        <button id="new-joke-btn">Add a Joke</button>
+                        <%- include('./partials/new-joke-form') %>
+                    </div>
+                </div>
+    </body>
+ </html>

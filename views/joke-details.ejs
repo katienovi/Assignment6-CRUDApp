@@ -1,0 +1,30 @@
+<%- include('./partials/head') %>
+    <script src="/script.js" defer></script>
+</head>
+
+    <body>
+        <%- include('./partials/searchbar') %>
+            <div id="root">
+
+                <button id="new-joke-btn">Add a Joke</button>
+                <%- include('./partials/new-joke-form') %>
+
+                    <main class="items-container">
+                        <% jokesList.forEach((joke)=> { %>
+                            <article class="item">
+                                <div class="text">
+                                    <h1> Joke #<%=joke.id %> </h1>
+                                    <a href="/jokebook/category/<%=joke.category%>"><%= joke.category %></a>
+                                    <p><%= joke.setup %>
+                                    </p>
+                                    <p><%= joke.delivery %> </p>
+                                    <h4><a href="/jokebook/random">Get another random joke!</a></h4>
+                                </div>
+                            </article>
+                            <% }) %>
+                    </main>
+            </div>
+
+    </body>
+
+    </html>
